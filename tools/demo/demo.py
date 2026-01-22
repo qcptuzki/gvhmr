@@ -39,8 +39,7 @@ CRF = 23  # 17 is lossless, every +6 halves the mp4 size
 def parse_args_to_cfg():
     # Put all args to cfg
     parser = argparse.ArgumentParser()
-    # 注意：这里的默认路径是你之前设置的绝对路径，如果换环境可能需要修改
-    parser.add_argument("--video", type=str, default="/home/ehr/lp_retarget/GVHMR/docs/example_video/qcp.mp4")
+    parser.add_argument("--video", type=str, default="inputs/videos/test_video.mp4", help="Input video path")
     parser.add_argument("--output_root", type=str, default=None, help="by default to outputs/demo")
     parser.add_argument("-s", "--static_cam", action="store_true", help="If true, skip DPVO")
     parser.add_argument("--use_dpvo", action="store_true", help="If true, use DPVO. By default not using DPVO.")

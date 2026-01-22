@@ -1,30 +1,17 @@
 # GVHMR: World-Grounded Human Motion Recovery via Gravity-View Coordinates
-### [Project Page](https://zju3dv.github.io/gvhmr) | [Paper](https://arxiv.org/abs/2409.06662)
-
-> World-Grounded Human Motion Recovery via Gravity-View Coordinates  
-> [Zehong Shen](https://zehongs.github.io/)<sup>\*</sup>,
-[Huaijin Pi](https://phj128.github.io/)<sup>\*</sup>,
-[Yan Xia](https://isshikihugh.github.io/scholar),
-[Zhi Cen](https://scholar.google.com/citations?user=Xyy-uFMAAAAJ),
-[Sida Peng](https://pengsida.net/)<sup>†</sup>,
-[Zechen Hu](https://zju3dv.github.io/gvhmr),
-[Hujun Bao](http://www.cad.zju.edu.cn/home/bao/),
-[Ruizhen Hu](https://csse.szu.edu.cn/staff/ruizhenhu/),
-[Xiaowei Zhou](https://xzhou.me/)  
-> SIGGRAPH Asia 2024
-
-<p align="center">
-    <img src=docs/example_video/project_teaser.gif alt="animated" />
-</p>
 
 ## 环境安装（Installation）
 
-> **提示**：下方是官方提供的安装步骤，但不够完整，安装过程中如果遇到缺失的包，根据 Cursor 或错误提示进行修复即可。
+> **提示**：下方是官方提供的安装步骤，不够完整，安装过程中如果遇到缺失的包，根据 Cursor 错误提示进行修复即可。
 
 ### 1. 环境配置
 
 ```bash
-git clone https://github.com/zju3dv/GVHMR
+# 如果是从 Git 仓库克隆，先执行：
+# git clone https://github.com/zju3dv/GVHMR
+# cd GVHMR
+
+建议直接下载本项目，目录层级已经搭建好了，可直接使用！
 cd GVHMR
 
 conda create -y -n gvhmr python=3.10
@@ -33,9 +20,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-> 提示：如果要在其他仓库中以可编辑模式安装 gvhmr，可以在 settings.json 中添加 `"python.analysis.extraPaths": ["path/to/your/package"]`
-
-### 2. 可选：DPVO 安装（不推荐，会影响推理速度）
+### 2. 可选：DPVO 安装（会影响推理速度）
 
 如果需要使用 DPVO 视觉里程计（通过 `--use_dpvo` 参数），需要额外安装：
 
