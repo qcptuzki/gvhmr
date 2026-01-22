@@ -1,0 +1,125 @@
+# ============================================
+# Python 相关
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ============================================
+# 虚拟环境
+# ============================================
+venv/
+env/
+ENV/
+.venv/
+conda-meta/
+
+# ============================================
+# IDE 和编辑器
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============================================
+# 测试和缓存
+# ============================================
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# ============================================
+# 模型文件（保留目录结构，忽略文件内容）
+# ============================================
+# inputs/checkpoints/ 下的所有模型文件
+inputs/checkpoints/**/*.ckpt
+inputs/checkpoints/**/*.pth
+inputs/checkpoints/**/*.pt
+inputs/checkpoints/**/*.pkl
+inputs/checkpoints/**/*.npz
+inputs/checkpoints/**/*.h5
+inputs/checkpoints/**/*.hdf5
+inputs/checkpoints/**/*.safetensors
+
+# 但保留目录结构（通过 .gitkeep 文件）
+!inputs/checkpoints/.gitkeep
+!inputs/checkpoints/**/.gitkeep
+
+# ============================================
+# 数据集（保留目录结构，忽略数据内容）
+# ============================================
+# 数据集目录
+inputs/3DPW/**/*
+inputs/AMASS/**/*
+inputs/BEDLAM/**/*
+inputs/H36M/**/*
+inputs/EMDB/**/*
+inputs/RICH/**/*
+
+# 数据集压缩包
+inputs/*.tar.gz
+inputs/*.tar
+inputs/*.zip
+
+# 但保留目录结构
+!inputs/3DPW/.gitkeep
+!inputs/AMASS/.gitkeep
+!inputs/BEDLAM/.gitkeep
+!inputs/H36M/.gitkeep
+!inputs/EMDB/.gitkeep
+!inputs/RICH/.gitkeep
+
+# ============================================
+# 输入视频（保留目录结构，忽略视频文件）
+# ============================================
+inputs/videos/**/*.mp4
+inputs/videos/**/*.MP4
+inputs/videos/**/*.avi
+inputs/videos/**/*.mov
+inputs/videos/**/*.mkv
+!inputs/videos/.gitkeep
+
+# ============================================
+# 输出结果（保留目录结构，忽略输出内容）
+# ============================================
+outputs/**/*
+!outputs/.gitkeep
+!outputs/**/.gitkeep
+
+# ============================================
+# 日志和临时文件
+# ============================================
+*.log
+*.tmp
+*.temp
+*.cache
+wandb/
+lightning_logs/
+tensorboard_logs/
+
+# ============================================
+# Jupyter Notebook
+# ============================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================
+# 系统文件
+# ============================================
+Thumbs.db
+.DS_Store
+*.bak
+*.backup
