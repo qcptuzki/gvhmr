@@ -338,7 +338,7 @@ python tools/demo/demo.py --video inputs/videos/test_video.mp4 -s
 python tools/demo/demo.py --video inputs/videos/test_video.mp4 -s
 
 # 2) 静态相机 + 自定义输出目录（方便做多次实验，基本上用这个指令就可以了！！！）
-python tools/demo/demo.py --video inputs/videos/test_video.mp4 -s --output_root outputs/result_test_01
+python tools/demo/demo.py --video inputs/videos/test_video.mp4 -s --output_root outputs
 
 # 3) 静态相机 + 保存更多中间可视化（更慢/更占空间）
 python tools/demo/demo.py --video inputs/videos/test_video.mp4 -s --verbose
@@ -349,8 +349,8 @@ python tools/demo/demo.py --video inputs/videos/test_video.mp4
 # 5) 非静态相机 + 指定全画幅等效焦距（mm），例如 24mm
 python tools/demo/demo.py --video inputs/videos/test_video.mp4 --f_mm 24
 
-# 6) 使用 DPVO（可选；通常更慢，且依赖 DPVO 环境）
-python tools/demo/demo.py --video inputs/videos/test_video.mp4 --use_dpvo
+# 6) 使用 DPVO（依赖 DPVO 环境，效果最好）
+python tools/demo/demo.py --video inputs/videos/test_video.mp4 --use_dpvo --output_root outputs
 ```
 
 ### 批量跑一个文件夹（目录下所有 .mp4/.MP4）
