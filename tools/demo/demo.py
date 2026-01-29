@@ -327,7 +327,7 @@ if __name__ == "__main__":
         merge_videos_horizontal([paths.incam_video, paths.global_video], paths.incam_global_horiz_video)
 
     # ===== Save SMPLX params as .npz (ALL KEYS) ===== #
-    smplx_npz_path = Path(cfg.output_dir) / "smplx_params.npz"
+    smplx_npz_path = Path(cfg.output_dir) / "dance_.npz"
     
     # 始终覆盖保存，确保包含最新数据
     Log.info(f"[Save SMPLX] Loading results from {paths.hmr4d_results}...")
