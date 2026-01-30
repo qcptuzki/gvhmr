@@ -299,8 +299,17 @@ def render_global(cfg):
 if __name__ == "__main__":
     cfg = parse_args_to_cfg()
     paths = cfg.paths
-    Log.info(f"[GPU]: {torch.cuda.get_device_name()}")
-    Log.info(f'[GPU]: {torch.cuda.get_device_properties("cuda")}')
+    
+    # 尝试获取 GPU 信息，如果失败则跳过（可能是 CUDA 兼容性问题）
+    try:
+        if torch.cuda.is_available():
+            Log.info(f"[GPU]: {torch.cuda.get_device_name()}")
+            Log.info(f'[GPU]: {torch.cuda.get_device_properties("cuda")}')
+        else:
+            Log.warn("[GPU]: CUDA is not available")
+    except Exception as e:
+        Log.warn(f"[GPU]: Failed to get GPU info: {e}")
+        Log.warn("[GPU]: Continuing anyway, but GPU operations may fail later")
 
     # ===== Preprocess and save to disk ===== #
     run_preprocess(cfg)
@@ -327,7 +336,9 @@ if __name__ == "__main__":
         merge_videos_horizontal([paths.incam_video, paths.global_video], paths.incam_global_horiz_video)
 
     # ===== Save SMPLX params as .npz (ALL KEYS) ===== #
-    smplx_npz_path = Path(cfg.output_dir) / "dance_.npz"
+    # 根据视频文件名自动命名：如果视频是 a.mp4，则 npz 文件为 a.npz
+    video_name = cfg.video_name  # 视频文件名（不含扩展名）
+    smplx_npz_path = Path(cfg.output_dir) / f"{video_name}.npz"
     
     # 始终覆盖保存，确保包含最新数据
     Log.info(f"[Save SMPLX] Loading results from {paths.hmr4d_results}...")
